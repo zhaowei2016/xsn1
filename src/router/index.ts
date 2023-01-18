@@ -10,6 +10,7 @@ const routes: Array<RouteRecordRaw> = [
       title: "购奶服务",
     },
   },
+ 
   {
     path: '/cooparation',
     name: 'cooparation',
@@ -35,6 +36,31 @@ const routes: Array<RouteRecordRaw> = [
     },
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "order" */ '../views/CheckOrder.vue')
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: () => import(/* webpackChunkName: "Cooparation" */ '../views/Login.vue'),
+    meta: {
+      title: "登录",
+    },
+  },
+  {
+    path: '/areahome',
+    name: 'areahome',
+    component: () => import(/* webpackChunkName: "Cooparation" */ '../views/AreaHome.vue'),
+    meta: {
+      title: "区域下单",
+    },
+  },
+  {
+    path: '/areacheckorder',
+    name: 'areacheckorder',
+    meta: {
+      title: "区域订单核对",
+    },
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "order" */ '../views/AreaCheckOrder.vue')
   }
 ]
 

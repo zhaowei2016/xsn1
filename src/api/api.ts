@@ -19,3 +19,5 @@ export const createOrder= (params: unknown) => api.post('app/order/orders', para
 export const toPay= (params: unknown) => api.get('app/order/orders/pay', params)
 export const campusAdd= (params: unknown) => api.post('wx/campusCooperation/add', params)
 export const getOpenId= (params: unknown) => api.get('wx/accessToken', params)
+export const login= (params: unknown) => api.post('/app/adver/login ', params)
+export const createOrder1= (params: unknown) => api.post('/app/order/schoolOrders ', params)
