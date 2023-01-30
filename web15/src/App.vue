@@ -9,7 +9,7 @@ export default {
 
 
   mounted () {
-    // this.getCode()
+    this.getCode()
      let router = useRouter()
       router.beforeEach(function (to, from, next) {
         if (to.meta.title) {

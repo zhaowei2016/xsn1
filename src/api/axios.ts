@@ -10,11 +10,11 @@ service.interceptors.request.use(
     if (config?.headers) {
       config.headers['Content-Type'] = 'application/json;charset=UTF-8'
     }
-    const openId = localStorage.getItem('openId')||'123456'
+    const openId = localStorage.getItem('openId')
     if(config.method ==='post'){
-      // config.data.openId = openId
+      config.data.openId = openId
     }else{
-      // config.params.openId = openId
+      config.params.openId = openId
     }
     return config
   },
@@ -36,7 +36,7 @@ service.interceptors.response.use(
     console.log('response', response)
     if (response.status !== 200) {
       if (navigator.onLine) {
-        Notify({ type: 'warning', message: '服务器繁忙，请稍后重试' })
+        Notify({ type: 'warning', message: response.data.message||'服务器繁忙，请稍后重试' })
       } else {
         Notify({ type: 'warning', message: '网络异常，请稍后重试' })
       }

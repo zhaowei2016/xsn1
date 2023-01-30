@@ -2,8 +2,6 @@
 <template>
   <div class="content">
     <div class="des">
-      <van-cell class="tl" title="客户姓名" :value="clientName" />
-      <van-cell class="tl" title="客户电话" :value="serviceMobile" />
       <van-cell class="tl" title="学校地址" :value="address" />
       <van-cell class="tl" title="学校班级" :value="schoolCName" />
     </div>
@@ -28,8 +26,6 @@ export default {
     const state = reactive({
       productList: submitData.productList || [],
       price: submitData.price,
-      clientName: submitData.clientName,
-      serviceMobile: submitData.serviceMobile,
       address: submitData.address,
       schoolCName: submitData.schoolCName,
       success:false,

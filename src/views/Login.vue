@@ -39,12 +39,12 @@ export default {
       console.log('3.-组件挂载到页面之后执行-------onMounted')
     })
     const Sub = async (value: any) => {
-      const data = {
-        adress:'我是中国馆人'
-      }
-      router.push({ name: 'areahome',params: data })
-      const res1: any = await login({ username: state.username, password: state.password }).catch(err => console.error(err))
+      const res1: any = await login({ loginName: state.username, password: state.password }).catch(err => console.error(err))
       console.log('res1',res1);
+      if(res1.code === 0){
+      router.push({ name: 'areahome',params: {...res1.data,address:(res1.data.province + '/' + res1.data.schoolName)}})
+      }
+
     }
     return {
       Sub,

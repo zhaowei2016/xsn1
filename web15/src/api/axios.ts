@@ -7,7 +7,7 @@ const service = axios.create({
 // request拦截器
 service.interceptors.request.use(
   async config => {
-    const openId = localStorage.getItem('openId')||'123456'
+    const openId = localStorage.getItem('openId')
     if(config.method ==='post'){
       config.data.openId = openId
     }else{

@@ -20,7 +20,7 @@
           </div>
         </div>
       </div>
-        <van-field style="marginTop:20px" label="地址" :model-value="adress" readonly />
+        <van-field style="marginTop:20px" label="地址" :model-value="address" readonly />
       <div class="bgw content_m content_b">
         <div class="txt txt1">
           <div>
@@ -48,7 +48,7 @@
 import { Field, Picker, Popup, Checkbox, SubmitBar, Dialog } from 'vant'
 import { reactive, toRefs, onBeforeMount, watch } from 'vue'
 import Card from "@/components/Card.vue";
-import { getAdver, getSchoolCList, getProductList, getArea } from '@/api/api'
+import { getAdver,getProductList1} from '@/api/api'
 import { useRouter, useRoute } from 'vue-router';
 
 export default {
@@ -74,18 +74,25 @@ export default {
       bg: '',
       imgUrl: '',
       imgUrl1: '',
-      adress: ''
+     
 
     })
     const router = useRouter()
-    const adress: any = useRoute().params.adress
-    state.adress = adress
+    console.log('router',router)
+    const address: any = useRoute().params.address
+    const schoolId: any = useRoute().params.schoolId
+    const schoolName: any = useRoute().params.schoolName
+    state.address = address
+    state.schoolId = schoolId
+    state.schoolName = schoolName
     onBeforeMount(async () => {
 
       const res0: any = await getAdver({}).catch(err => console.error(err))
       state.imgUrl = 'http://www.czxlkj.cn/' + res0.data.logoImage1
       state.imgUrl1 = 'http://www.czxlkj.cn/' + res0.data.logoImage2
       localStorage.removeItem('submitObj')
+      const res2: any = await getProductList1({ schoolId}).catch(err => console.error(err))
+      state.productList = res2.data
     })
 
     const updateCardList = (cardList: any) => {
@@ -108,7 +115,7 @@ export default {
       if (state.checked) {
         if (submitObj.productList.length > 0) {
           localStorage.setItem('submitObj', JSON.stringify(submitObj))
-          router.push({ name: 'checkorder' })
+          router.push({ name: 'areacheckorder' })
         } else {
           Dialog.alert({
             message: '请添加所需产品'
