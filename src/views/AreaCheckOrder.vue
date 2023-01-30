@@ -3,7 +3,7 @@
   <div class="content">
     <div class="des">
       <van-cell class="tl" title="学校地址" :value="address" />
-      <van-cell class="tl" title="学校班级" :value="schoolCName" />
+      <van-cell class="tl" title="学校名称" :value="schoolCName" />
     </div>
     <Card :cardList="productList"></Card>
     <van-submit-bar :price="price" button-text="立即支付" @submit="onSubmit" />

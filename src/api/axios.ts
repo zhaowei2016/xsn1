@@ -34,7 +34,7 @@ service.interceptors.request.use(
 service.interceptors.response.use(
   response => {
     console.log('response', response)
-    if (response.status !== 200) {
+    if (response.status !== 200 || response.data.code!==0) {
       if (navigator.onLine) {
         Notify({ type: 'warning', message: response.data.message||'服务器繁忙，请稍后重试' })
       } else {

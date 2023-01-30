@@ -69,7 +69,6 @@ body {
 .login {
   width: 100vw;
   height: 100vh;
-  padding: 0 50px;
   background-color: #282c34;
 }
 
@@ -179,12 +178,12 @@ input:focus~.top {
 
 .btn {
   position: absolute;
+  width: 240px;
   left: 50%;
   top: 54%;
   transform: translate(-50%, -50%);
   text-align: center;
-  padding: 5px;
-  width: 52%;
+  padding: 10px 5px;
   margin-top: 40px;
   background-color: #61dafb;
   color: #fff;

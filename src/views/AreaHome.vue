@@ -15,12 +15,12 @@
       <div class="bgw content_m">
         <div class="txt">
           <div>
-            <p class="txt_t">信息</p>
+            <p class="txt_t">学校信息</p>
             <p class="txt_b">请核对下列信息，确保信息无误</p>
           </div>
         </div>
       </div>
-        <van-field style="marginTop:20px" label="地址" :model-value="address" readonly />
+        <van-field style="marginTop:20px" label="学校" :model-value="address" readonly />
       <div class="bgw content_m content_b">
         <div class="txt txt1">
           <div>

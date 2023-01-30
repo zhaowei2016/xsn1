@@ -1,5 +1,6 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import Login from '../views/Login.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -40,7 +41,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/login',
     name: 'login',
-    component: () => import(/* webpackChunkName: "Cooparation" */ '../views/Login.vue'),
+    component:Login,
     meta: {
       title: "登录",
     },
@@ -50,14 +51,14 @@ const routes: Array<RouteRecordRaw> = [
     name: 'areahome',
     component: () => import(/* webpackChunkName: "Cooparation" */ '../views/AreaHome.vue'),
     meta: {
-      title: "区域下单",
+      title: "学校下单",
     },
   },
   {
     path: '/areacheckorder',
     name: 'areacheckorder',
     meta: {
-      title: "区域订单核对",
+      title: "学校订单核对",
     },
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "order" */ '../views/AreaCheckOrder.vue')
