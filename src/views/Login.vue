@@ -25,7 +25,7 @@
 import { reactive, toRefs,  onMounted } from 'vue'
 import { login } from '@/api/api'
 import { useRouter } from 'vue-router';
-
+import { Notify } from 'vant'
 export default {
   name: '',
   setup() {
@@ -43,6 +43,8 @@ export default {
       console.log('res1',res1);
       if(res1.code === 0){
       router.push({ name: 'areahome',params: {...res1.data,address:(res1.data.province + '/' + res1.data.schoolName)}})
+      }else{
+        Notify({ type: 'warning', message:res1.message||'服务器繁忙，请稍后重试' })
       }
 
     }
