@@ -9,7 +9,10 @@ export default {
 
 
   mounted () {
-    this.getCode()
+    const isProd = process.env.NODE_ENV === 'production'
+    if(isProd){
+      this.getCode()
+    }
      let router = useRouter()
       router.beforeEach(function (to, from, next) {
         if (to.meta.title) {

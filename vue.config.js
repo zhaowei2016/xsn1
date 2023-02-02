@@ -6,7 +6,7 @@ module.exports = defineConfig({
   productionSourceMap: false,
   outputDir: 'dist', // 构建输出目录
   assetsDir: 'assets-pack', // 静态资源目录 (js, css, img, fonts)  
-  // publicPath:'././',
+  publicPath:isProd?'././':'./',
   configureWebpack: {
     plugins: [
       new VConsolePlugin({ enable: !isProd }),
