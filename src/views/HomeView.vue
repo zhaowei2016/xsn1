@@ -10,7 +10,7 @@
     <div class="content">
       <div class="bgw content_t">
         <img src="@/assets/horn.png" alt="">
-        <span>{{year}}年秋季学生饮用奶征订工作已经开始</span>
+        <span>{{ title }}</span>
       </div>
       <div class="bgw content_m">
         <div class="txt">
@@ -92,7 +92,8 @@ export default {
       year:new Date().getFullYear(),
       bg: '',
       imgUrl:'',
-      imgUrl1:''
+      imgUrl1:'',
+      title:'',
 
     })
     const router = useRouter()
@@ -111,6 +112,7 @@ export default {
       console.log('resgetAdver',res)
         state.imgUrl = 'http://www.czxlkj.cn/'+res0.data.logoImage1
         state.imgUrl1 = 'http://www.czxlkj.cn/'+res0.data.logoImage2
+        state.title = res0.data.title
         console.log(state.imgUrl);
         
         // require("../assets/bg.png")

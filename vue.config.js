@@ -4,6 +4,9 @@ const isProd = process.env.NODE_ENV === 'production'
 module.exports = defineConfig({
   transpileDependencies: true,
   productionSourceMap: false,
+  outputDir: 'dist', // 构建输出目录
+  assetsDir: 'assets-pack', // 静态资源目录 (js, css, img, fonts)  
+  // publicPath:'././',
   configureWebpack: {
     plugins: [
       new VConsolePlugin({ enable: !isProd }),
