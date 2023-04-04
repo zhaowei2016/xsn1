@@ -8,6 +8,8 @@
             :finished="lists[active].finished" finished-text="没有更多了" @load="onLoad">
             <div v-for="(item, index) in lists[active].list" :key="item" class="z-cell">
               <div class="z_t tl ">{{ item.goodName }} <span class="status">{{ delStatus(item.status) }}</span></div>
+              <div class="z_cell_c tl fz14">客户名称: {{ item.clientName }}</div>
+              <div class="z_cell_c tl fz14">班级名称: {{ item.className }}</div>
               <div class="z_cell_c tl fz14">创建时间: {{ item.createDate }}</div>
               <div class="z_cell_c tl fz14">订单编号: {{ item.orderNo }}</div>
               <div class="z_b tl fz14">
